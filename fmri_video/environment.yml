@@ -1,0 +1,23 @@
+name: video
+channels:
+  - defaults
+dependencies:
+  - ffmpeg
+  - pandoc
+  - python=3.11
+  - pip
+  - setuptools
+  - wheel
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - -e ./fmri_video[full]
+variables:
+  FSLDIR: /usr/local/fsl
+  FREESURFER_HOME: /usr/local/freesurfer
+  FS_LICENSE: /usr/local/freesurfer/license.txt
+  FSLOUTPUTTYPE: NIFTI_GZ
+  FMRI_VIDEO_HEADLESS: "1"
+  MPLBACKEND: Agg
+  PATH: /root/anaconda3/envs/video/bin:/usr/local/fsl/bin:/usr/local/freesurfer/bin:/usr/local/bin:/usr/bin:/bin
+  PYTHONNOUSERSITE: "1"
+  SUBJECTS_DIR: /usr/local/freesurfer/subjects
